@@ -17,7 +17,7 @@ dvc pull
 Si `entrega/e3` no existe, créenla como dice el paso 0 del [laboratorio 1](01-dagshub.md). `dvc pull` trae `models/model.pkl`.
 
 ### 1. requirements-api.txt
-La API necesita menos que el entrenamiento. Creen `requirements-api.txt` en la raíz:
+La API necesita menos que el entrenamiento. Creen `requirements-api.txt` en la raíz con este contenido, que también está en [la plantilla](https://github.com/srobles5/mlops-plantilla/blob/master/requirements-api.txt):
 ```
 pandas>=2.0,<3
 scikit-learn==X.Y.Z
@@ -81,7 +81,7 @@ uvicorn api.app:app --reload
 Abran http://localhost:8000/docs y entren a **POST /predict › Try it out › Execute**. Detengan el servidor con `Ctrl+C`.
 
 ### 5. Dockerfile
-Creen `Dockerfile` en la raíz:
+Creen `Dockerfile` en la raíz con este contenido, que también está en [la plantilla](https://github.com/srobles5/mlops-plantilla/blob/master/Dockerfile):
 ```dockerfile
 FROM python:3.12-slim
 WORKDIR /app
