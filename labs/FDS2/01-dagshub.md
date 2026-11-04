@@ -1,6 +1,6 @@
 # Laboratorio 1 · DagsHub: remote de DVC y MLflow compartidos
 
-Viernes del fin de semana 2 · 20 min · por equipos · hito E3
+Viernes del fin de semana 2 · 30 min · por equipos · hito E3
 
 ## Objetivo
 Que los datos, el modelo y los experimentos dejen de vivir en un solo portátil. Mañana GitHub Actions va a traer el modelo desde DagsHub para desplegarlo.
