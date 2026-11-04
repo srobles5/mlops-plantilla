@@ -72,7 +72,7 @@ En GitHub: **Pull requests › New pull request**, con `base: entrega/e1` ← `c
 - [ ] El PR de `feat/versiona-dataset` está aprobado y unido a `entrega/e1`.
 
 ## Opcional: compartir los datos dentro del equipo
-El remote en carpeta local vive en una sola máquina. En el fin de semana 2 el remote pasa a **DagsHub** (gratis y sin tarjeta), que también da el servidor de MLflow compartido. Si quieren adelantarlo:
+El remote en carpeta local vive en una sola máquina. En el fin de semana 2 el remote pasa a **DagsHub** (con su plan gratuito), que también da el servidor de MLflow compartido. Si quieren adelantarlo:
 1. Entrar a dagshub.com con la cuenta de GitHub y elegir **Create › New Repository › Connect a repository** con el repositorio del equipo.
 2. En DagsHub, botón **Remote › Data › DVC**: ahí aparecen los comandos exactos para su repositorio.
 3. Al pegar los comandos con el usuario y el token, usen siempre `--local`: así las credenciales quedan en `.dvc/config.local`, que Git no sube.

@@ -25,8 +25,8 @@ git switch -c feat/conecta-dagshub
 ```
 
 ### 1. Conectar el repositorio (una persona)
-1. Entren a https://dagshub.com con su cuenta de GitHub. Es gratis y no pide tarjeta.
-2. **Create › New Repository › Connect a repository › GitHub**, y elijan el repositorio del equipo.
+1. Entren a https://dagshub.com con su cuenta de GitHub y usen el plan gratuito.
+2. **Create › New Repository › Connect a repository › GitHub**, y elijan el repositorio del equipo. Déjenlo **público**: en privado, el plan gratuito solo permite 2 colaboradores y 100 experimentos. Quedan a la vista el dataset y el modelo, así que un equipo con datos propios debe avisar al docente antes de conectarlo.
 3. En el repositorio de DagsHub: **Settings › Collaborators**, y agreguen a los demás con permiso de escritura.
 
 ### 2. Crear el token (cada integrante)
