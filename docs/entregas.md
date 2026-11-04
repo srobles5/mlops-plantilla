@@ -84,3 +84,18 @@ En GitHub: **Pull requests › New pull request**, con `base: entrega/e1` ← `c
 - [ ] README que explica cómo reproducir todo en 3 comandos
 - [ ] Ramas de trabajo con la convención, unidas a `entrega/e2` por PR aprobados
 - [ ] Demo de 5 minutos al grupo
+
+### E3 · Modelo en contenedor
+- [ ] `api/app.py` con `/health` y `/predict`, y la entrada validada con Pydantic
+- [ ] `Dockerfile` y `requirements-api.txt`
+- [ ] `docker run` levanta la API y `/predict` responde con una fila real del dataset
+- [ ] README que explica cómo construir, correr y probar
+- [ ] Ramas de trabajo con la convención, unidas a `entrega/e3` por PR aprobados
+
+### E4 · Pipeline CI/CD
+- [ ] Pruebas en `tests/` y workflow de CI que corre en cada PR
+- [ ] Las reglas de `master` y `entrega/*` exigen que el CI pase
+- [ ] El entrenamiento registra el modelo en el MLflow de DagsHub
+- [ ] La API está en un Space de Hugging Face y se actualiza con un merge, sin pasos manuales
+- [ ] Los tokens están en GitHub Secrets y en ningún archivo del repositorio
+- [ ] Ramas de trabajo con la convención, unidas a `entrega/e4` por PR aprobados
