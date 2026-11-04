@@ -1,6 +1,6 @@
 # Laboratorio 1 · DagsHub: remote de DVC y MLflow compartidos
 
-Viernes del fin de semana 2 · 30 min · por equipos · hito E3
+Viernes del fin de semana 2 · 60 min · por equipos · hito E3
 
 ## Objetivo
 Que los datos, el modelo y los experimentos dejen de vivir en un solo portátil. Mañana GitHub Actions va a traer el modelo desde DagsHub para desplegarlo.
@@ -111,4 +111,4 @@ dvc pull
 - **`API request to endpoint /api/2.0/mlflow/logged-models failed with error code 404`**: el servidor no acepta esa llamada de MLflow 3. Instalen la versión anterior con `pip install "mlflow<3" "sqlalchemy<2.0.45"`, pónganla igual en `requirements.txt` y en `src/train.py` cambien `name="model"` por `artifact_path="model"`.
 - **`UnicodeEncodeError` con `charmap`** al terminar el run, en Windows: MLflow imprime un emoji que la terminal no sabe mostrar. Definan `$env:PYTHONUTF8 = "1"` y repitan.
 
-Si no alcanzan hoy, sigan con el remote local y conecten DagsHub mañana a primera hora: el CD lo necesita.
+Si no alcanzan hoy, terminen antes del sábado a las 13:00: el CD lo necesita.

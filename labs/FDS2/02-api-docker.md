@@ -1,6 +1,6 @@
 # Laboratorio 2 · La API del equipo en Docker
 
-Viernes del fin de semana 2 · 25 min, y 45 min más el sábado · por equipos · hito E3
+Viernes del fin de semana 2 · 50 min, y 45 min más el sábado · por equipos · hito E3
 
 ## Objetivo
 Que el modelo del equipo responda predicciones por HTTP desde un contenedor, en cualquier máquina.
