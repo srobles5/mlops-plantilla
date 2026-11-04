@@ -88,7 +88,7 @@ En GitHub: **Pull requests › New pull request**, con `base: entrega/e1` ← `c
 ### E3 · Modelo en contenedor
 - [ ] `api/app.py` con `/health` y `/predict`, y la entrada validada con Pydantic
 - [ ] `Dockerfile` y `requirements-api.txt`
-- [ ] `docker run` levanta la API y `/predict` responde con una fila real del dataset
+- [ ] El contenedor levanta la API y `/predict` responde con una fila real del dataset
 - [ ] README que explica cómo construir, correr y probar
 - [ ] Ramas de trabajo con la convención, unidas a `entrega/e3` por PR aprobados
 

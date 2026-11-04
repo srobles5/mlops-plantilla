@@ -22,6 +22,7 @@ data/raw/        dataset original (versionado con DVC)
 data/prepared/   salida de la etapa prepare
 models/          modelo entrenado
 src/             scripts de cada etapa
+api/             API de inferencia (fin de semana 2)
 labs/            guías de los laboratorios, una carpeta por fin de semana (FDS1, FDS2, FDS3)
 params.yaml      parámetros del pipeline
 dvc.yaml         definición del pipeline (se crea en el laboratorio 3)

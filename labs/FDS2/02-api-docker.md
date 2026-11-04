@@ -40,7 +40,7 @@ python -c "import pandas as pd; print(pd.read_csv('data/raw/dataset.csv').iloc[0
 Anoten las columnas, salvo el objetivo y las de `drop_columns`.
 
 ### 3. api/app.py
-Creen `api/app.py`. Este ejemplo es de churn y solo muestra unas pocas columnas. Pongan en `Cliente` todas las de su dataset, cada una con un valor por defecto real:
+Creen `api/app.py` con este contenido, que también está en [la plantilla](https://github.com/srobles5/mlops-plantilla/blob/master/api/app.py). Este ejemplo es de churn y solo muestra unas pocas columnas. Pongan en `Cliente` todas las de su dataset, cada una con un valor por defecto real:
 ```python
 """API de inferencia: carga el modelo y responde predicciones."""
 import os
@@ -94,18 +94,24 @@ CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
 ### 6. Construir y correr
-Con Docker Desktop abierto:
+Con Docker Desktop abierto, construyan la imagen desde la raíz del repositorio. Es el único comando que hace falta:
 ```bash
 docker build -t mi-api .
+```
+Después, en Docker Desktop:
+1. Entren a **Images** y, sobre `mi-api`, pulsen **Run**.
+2. Abran **Optional settings** y en el puerto escriban `8000`.
+3. Pulsen **Run**.
+4. En **Containers** debe aparecer corriendo. Si no, abran su nombre y miren **Logs**.
+
+En http://localhost:8000/health debe responder `{"status":"ok"}`. En http://localhost:8000/docs, prueben `/predict` con una fila real del dataset. Luego escriban texto en un campo numérico: debe responder error 422.
+
+Para detenerlo, usen el botón de detener en **Containers**.
+
+En Codespaces no hay Docker Desktop. Allí se corre con este comando y el puerto se abre desde la pestaña **Ports**:
+```bash
 docker run --rm -p 8000:8000 mi-api
 ```
-Desde otra terminal:
-```bash
-curl http://localhost:8000/health
-```
-En http://localhost:8000/docs, prueben `/predict` con una fila real del dataset. Luego escriban texto en un campo numérico: debe responder error 422.
-
-En Codespaces, el puerto se abre desde la pestaña **Ports**.
 
 ### 7. README
 Agreguen al `README.md` del repositorio una sección con cómo construir, correr y probar la API.
@@ -131,7 +137,7 @@ Alguien que no escribió el Dockerfile construye y corre la imagen desde cero. D
 ## Errores frecuentes
 - **`Cannot connect to the Docker daemon`** o **`docker_engine`**: Docker Desktop no está abierto.
 - **`COPY failed` con `models`** o **`No such file` con `model.pkl`**: falta el modelo. Corran `dvc pull` antes de construir.
-- **La API corre pero el navegador no conecta**: falta `-p 8000:8000` o `--host 0.0.0.0`.
-- **`port is already allocated`**: el puerto está ocupado. Usen `-p 8001:8000` y abran `localhost:8001`.
+- **La API corre pero el navegador no conecta**: no escribieron el puerto en **Optional settings**, o falta `--host 0.0.0.0` en el `CMD`.
+- **`port is already allocated`**: el puerto está ocupado. Escriban `8001` en **Optional settings** y abran `localhost:8001`.
 - **`InconsistentVersionWarning` o error al cargar el modelo**: la versión de `scikit-learn` de `requirements-api.txt` no es la del entrenamiento.
 - **`Could not import module "api.app"`**: corran el comando desde la raíz del repositorio.
