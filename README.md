@@ -24,7 +24,6 @@ models/          modelo entrenado
 src/             scripts de cada etapa
 api/             API de inferencia (fin de semana 2)
 tests/           pruebas de la API (fin de semana 2)
-space/           encabezado del Space de Hugging Face (fin de semana 2)
 Dockerfile       imagen de la API (fin de semana 2)
 requirements-api.txt  librerías de la API; cambiar X.Y.Z por la versión de scikit-learn del entrenamiento
 labs/            guías de los laboratorios, una carpeta por fin de semana (FDS1, FDS2, FDS3)

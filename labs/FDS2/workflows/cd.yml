@@ -2,22 +2,27 @@ name: CD
 on:
   push:
     branches: [master, entrega/e4]
+permissions:
+  contents: read
+  packages: write
 jobs:
-  desplegar:
+  publicar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install dvc huggingface_hub
+      - run: pip install dvc
       - name: Traer el modelo
         run: |
           dvc remote modify dagshub --local auth basic
           dvc remote modify dagshub --local user ${{ secrets.DAGSHUB_USER }}
           dvc remote modify dagshub --local password ${{ secrets.DAGSHUB_TOKEN }}
           dvc pull models/model.pkl
-      - name: Subir al Space
+      - name: Construir y publicar la imagen
         run: |
-          cp -r api models Dockerfile requirements-api.txt space/
-          hf upload usuario/api-equipo space . --repo-type=space --token=${{ secrets.HF_TOKEN }}
+          IMAGEN=ghcr.io/$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]'):latest
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker build -t "$IMAGEN" .
+          docker push "$IMAGEN"

@@ -96,6 +96,6 @@ En GitHub: **Pull requests › New pull request**, con `base: entrega/e1` ← `c
 - [ ] Pruebas en `tests/` y workflow de CI que corre en cada PR
 - [ ] Las reglas de `master` y `entrega/*` exigen que el CI pase
 - [ ] El entrenamiento registra el modelo en el MLflow de DagsHub
-- [ ] La API está en un Space de Hugging Face y se actualiza con un merge, sin pasos manuales
+- [ ] Un merge publica la imagen en GitHub, sin pasos manuales, y otro integrante la corre en Docker Desktop
 - [ ] Los tokens están en GitHub Secrets y en ningún archivo del repositorio
 - [ ] Ramas de trabajo con la convención, unidas a `entrega/e4` por PR aprobados

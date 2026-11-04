@@ -12,7 +12,7 @@ Una carpeta por fin de semana. Cada guía dice qué hacer, cuándo está listo y
 1. [DagsHub: remote de DVC y MLflow compartidos](FDS2/01-dagshub.md)
 2. [La API del equipo en Docker](FDS2/02-api-docker.md)
 3. [CI: pruebas en cada Pull Request](FDS2/03-ci.md)
-4. [CD: la API en Hugging Face Spaces](FDS2/04-cd.md)
+4. [CD: publicar la imagen de la API](FDS2/04-cd.md)
 
 ## [FDS3](FDS3/) · Producción y monitoreo
 Las guías se publican antes del fin de semana 3.
