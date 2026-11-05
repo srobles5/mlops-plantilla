@@ -105,6 +105,11 @@ dvc pull
 ## Errores frecuentes
 - **`401 Unauthorized` o `Bad credentials`**: usuario o token mal escritos. Repitan los comandos con `--local`, o vuelvan a definir las variables si abrieron otra terminal.
 - **`403 Forbidden`**: la persona no es colaboradora del repositorio de DagsHub con permiso de escritura.
+- **`SSLCertVerificationError: self-signed certificate in certificate chain`** al hacer `dvc push` o `dvc pull`: un antivirus, proxy o VPN de la red intercepta HTTPS y DVC no confía en su certificado. Desactiven la verificación solo en su portátil (`--local`, no se sube a Git) y repitan:
+  ```bash
+  dvc remote modify dagshub --local ssl_verify false
+  ```
+  Úsenlo solo si el error aparece y en una red que conozcan. Para quitarlo después: `dvc remote modify dagshub --local --unset ssl_verify`.
 - **`dvc pull` dice que faltan archivos**: alguien no hizo `dvc push` después de entrenar.
 - **El run sigue apareciendo solo en local**: la terminal no tiene `MLFLOW_TRACKING_URI`. Compruébenlo con `echo $MLFLOW_TRACKING_URI` o, en PowerShell, `echo $env:MLFLOW_TRACKING_URI`.
 - **`dvc repro` no crea un run nuevo**: no cambió nada. Fuercen el entrenamiento con `dvc repro --force`.
