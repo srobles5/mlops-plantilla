@@ -1,4 +1,4 @@
 [core]
     remote = dagshub
 ['remote "dagshub"']
-    url = https://dagshub.com/srobles5/mlops-test.git.dvc
+    url = https://dagshub.com/srobles5/mlops-plantilla.dvc
