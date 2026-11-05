@@ -1,0 +1,70 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python3 src/prepare.py
+    deps:
+    - path: data/raw/dataset.csv
+      hash: md5
+      md5: 98e7b22890cdd23fa18339b5fdb6490b
+      size: 774915
+    - path: src/prepare.py
+      hash: md5
+      md5: 916c22d206f0537b5fd7886ea0a7b59b
+      size: 1261
+    params:
+      params.yaml:
+        prepare:
+          target: Churn
+          drop_columns:
+          - customerID
+          test_size: 0.2
+          random_state: 42
+    outs:
+    - path: data/prepared
+      hash: md5
+      md5: 982f852b72f0f7e242d9d450cc5625f7.dir
+      size: 409749
+      nfiles: 2
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - path: data/prepared
+      hash: md5
+      md5: 982f852b72f0f7e242d9d450cc5625f7.dir
+      size: 409749
+      nfiles: 2
+    - path: src/train.py
+      hash: md5
+      md5: b2f8ed5332b05a6df78b9b79b9d9a4cb
+      size: 1571
+    params:
+      params.yaml:
+        train:
+          n_estimators: 100
+          max_depth: 5
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: 1407ff73a66f3b654776c6cd9e2dc8b5
+      size: 514745
+  evaluate:
+    cmd: python3 src/evaluate.py
+    deps:
+    - path: data/prepared
+      hash: md5
+      md5: 982f852b72f0f7e242d9d450cc5625f7.dir
+      size: 409749
+      nfiles: 2
+    - path: models/model.pkl
+      hash: md5
+      md5: 1407ff73a66f3b654776c6cd9e2dc8b5
+      size: 514745
+    - path: src/evaluate.py
+      hash: md5
+      md5: c23f217f906a1dc5d9ef27a08e225008
+      size: 677
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 35cc3dcfc1d442016d822572251151e1
+      size: 43
