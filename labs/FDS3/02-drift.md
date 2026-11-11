@@ -103,11 +103,7 @@ Columnas con drift: 2 de 19 (11%): tenure, Contract
 El conjunto no tiene drift: cambiaron menos de la mitad de las columnas.
 Informe: reports/drift.html
 ```
-Abran `reports/drift.html` en el navegador. Para comparar con lo que de verdad recibió la API:
-```bash
-python src/drift.py logs/entradas.csv
-```
-Solo se comparan las columnas que están en los dos archivos.
+Abran `reports/drift.html` en el navegador.
 
 ### 4. Leer el informe
 1. ¿Se marcó drift en el conjunto? Evidently lo marca cuando cambió la mitad o más de las columnas.

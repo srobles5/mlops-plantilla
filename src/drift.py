@@ -1,7 +1,6 @@
 """Compara los datos del entrenamiento con los que llegaron a la API y guarda un informe de drift.
 
-Uso:  python src/drift.py                     compara con logs/actual.csv
-      python src/drift.py logs/entradas.csv   compara con lo que guardó la API
+Uso:  python src/drift.py   compara con logs/actual.csv
 Escribe reports/drift.html, que se abre en el navegador.
 """
 import sys
