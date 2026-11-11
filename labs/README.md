@@ -15,4 +15,7 @@ Una carpeta por fin de semana. Cada guía dice qué hacer, cuándo está listo y
 4. [CD: publicar la imagen de la API](FDS2/04-cd.md)
 
 ## [FDS3](FDS3/) · Producción y monitoreo
-Las guías se publican antes del fin de semana 3.
+1. [El panel de la API con Prometheus y Grafana](FDS3/01-monitoreo.md)
+2. [Informe de drift con Evidently](FDS3/02-drift.md)
+3. [Reentrenar con GitHub Actions](FDS3/03-reentreno.md)
+4. [Kubernetes con kind (opcional)](FDS3/04-kind.md)

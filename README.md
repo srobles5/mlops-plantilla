@@ -21,11 +21,13 @@ dvc repro
 data/raw/        dataset original (versionado con DVC)
 data/prepared/   salida de la etapa prepare
 models/          modelo entrenado
-src/             scripts de cada etapa
+src/             scripts de cada etapa; generar_trafico.py, simular_drift.py y drift.py (fin de semana 3)
 api/             API de inferencia (fin de semana 2)
 tests/           pruebas de la API (fin de semana 2)
 Dockerfile       imagen de la API (fin de semana 2)
 requirements-api.txt  librerías de la API; cambiar X.Y.Z por la versión de scikit-learn del entrenamiento
+prometheus.yml   qué lee Prometheus y cada cuánto (fin de semana 3)
+docker-compose.yml  API, Prometheus y Grafana juntos (fin de semana 3)
 labs/            guías de los laboratorios, una carpeta por fin de semana (FDS1, FDS2, FDS3)
 params.yaml      parámetros del pipeline
 dvc.yaml         definición del pipeline (se crea en el laboratorio 3)

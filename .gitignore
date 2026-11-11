@@ -8,3 +8,7 @@ mlruns/
 mlartifacts/
 
 data/raw/*csv
+
+# Entradas de la API e informes de drift (fin de semana 3)
+logs/
+reports/

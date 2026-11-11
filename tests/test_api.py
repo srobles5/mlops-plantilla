@@ -16,6 +16,7 @@ def client(tmp_path, monkeypatch):
     X = pd.DataFrame({"tenure": [1, 60], "MonthlyCharges": [90, 20]})
     joblib.dump(LogisticRegression().fit(X, ["Yes", "No"]), tmp_path / "model.pkl")
     monkeypatch.setenv("MODEL_DIR", str(tmp_path))
+    monkeypatch.setenv("LOGS_DIR", str(tmp_path / "logs"))
     import api.app as modulo
     importlib.reload(modulo)
     return TestClient(modulo.app)
