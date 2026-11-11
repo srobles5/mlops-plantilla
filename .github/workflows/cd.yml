@@ -1,7 +1,7 @@
 name: CD
 on:
   push:
-    branches: [master, entrega/e4, feat/cd-imagen]
+    branches: [master, entrega/e4]
 permissions:
   contents: read
   packages: write
